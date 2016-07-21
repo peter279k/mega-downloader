@@ -82,7 +82,7 @@
 		public function mega_api_req($req,$get=array()) {
 			$this -> seqno = $this -> seqno + 1;
 			$get['id'] = $this -> seqno;
-			
+
 			$client = new Client(["verify" => false]);
 			// Provide the body as a string or json.
 			$response = $client -> request('POST', 'https://g.api.mega.co.nz/cs?'.http_build_query($get), [
@@ -221,11 +221,10 @@
 		* @return boolean True
 		*/
 		public function download($as_attachment = false, $local_path = null) {
-			/*
+			
 			if($this -> is_folder) {
 				die("You can not download raw folders. Use download_zip() instead.\n");
 			}
-			*/
 
 			echo "download starts...\n";
 		
